@@ -6,8 +6,9 @@
   "scripts": {
     "start": "node dist/app.js",
     "dev": "nodemon src/app.ts",
-    "build": "tsc -p ."
-  },
+    "build": "tsc -p .",
+    "heroku-postbuild": "npm run build"
+  },  
   "keywords": [],
   "author": "",
   "license": "ISC",
