@@ -11,7 +11,7 @@ app.use("/api/users", usersRoute)
 app.use("/api/posts", postsRoute); 
 
 app.get("/", (req,res) => {
-    res.send("Hello"); 
+    res.send("Hello Yash!"); 
 })
 
 app.listen(3000, () => console.log("Server is running!"))
