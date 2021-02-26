@@ -9,3 +9,4 @@ postRouter.get("/:id", controller.getPost);
 postRouter.post("/", controller.createPost);
 
 export = postRouter;
+//testing
