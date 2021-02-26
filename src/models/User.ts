@@ -76,5 +76,5 @@ const UserSchema = new mongoose.Schema(
     ]}
   }, 
 );
-//test
+//testing
 export default mongoose.model<IUser>("User", UserSchema);
