@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import IUser from "../interfaces/user";
-
+// testing branches with heroku 
 const UserSchema = new mongoose.Schema(
   {
     uid: {
