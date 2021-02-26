@@ -1,16 +1,12 @@
 import mongoose from "mongoose";
-import IUser from "../interfaces/user";
+import IReply from "../interfaces/reply";
 
-interface InputReply extends mongoose.Document {
-    timestamp: number;
-    admin: IUser["uid"];
-    reply: string;
-}
 
 const ReplySchema = new mongoose.Schema({
     admin: {
         required: true,
-        type:String 
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
     },
     timestamp: {
         default: Date.now()/1000,
@@ -22,4 +18,4 @@ const ReplySchema = new mongoose.Schema({
     }
 })
 
-export default mongoose.model<InputReply>("Reply", ReplySchema); 
+export default mongoose.model<IReply>("Reply", ReplySchema); 

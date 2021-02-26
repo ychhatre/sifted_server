@@ -8,5 +8,4 @@ postRouter.get("/", controller.getAllPosts);
 postRouter.get("/:id", controller.getPost); 
 postRouter.post("/", controller.createPost);
 
-export default postRouter; 
-module.exports = postRouter;
+export = postRouter;

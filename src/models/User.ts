@@ -4,8 +4,8 @@ import IUser from "../interfaces/user";
 const UserSchema = new mongoose.Schema(
   {
     uid: {
-      required: true,
       type: String,
+      required: true
     },
     displayName: {
       required: true,
@@ -27,7 +27,7 @@ const UserSchema = new mongoose.Schema(
       type: String,
     },
     downloadURL: {
-      required: true,
+      required: false,
       max: 20,
       min: 1,
       type: String,
@@ -46,7 +46,9 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: false,
     },
-    followers: [
+    followers: {
+      required: false,
+      type: [
       {
         uid: {
           type: String,
@@ -57,8 +59,10 @@ const UserSchema = new mongoose.Schema(
           type: Date,
         },
       },
-    ],
-    following: [
+    ]},
+    following: {
+      required: false,
+      type: [
       {
         uid: {
           type: String,
@@ -69,9 +73,8 @@ const UserSchema = new mongoose.Schema(
           type: Date,
         },
       },
-    ],
-  },
-  { _id: false,}
+    ]}
+  }, 
 );
 
 export default mongoose.model<IUser>("User", UserSchema);

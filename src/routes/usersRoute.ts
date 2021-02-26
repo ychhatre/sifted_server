@@ -9,4 +9,3 @@ userRouter.get("/:uid", controller.getUser);
 userRouter.post("/", controller.createUser);
 
 export = userRouter; 
-// module.exports = userRouter;
